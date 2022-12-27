@@ -1,0 +1,44 @@
+package creatingAndAccessingWallet;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+public class LaunchBrowser {
+	
+	public WebDriver driver;
+		@BeforeMethod
+	    public void openchrome() throws InterruptedException {
+			  System.setProperty("webdriver.chrome.driver", "/home/asd/Downloads/chromedriver_linux64/chromedriver");
+			  
+			//ChromeOptions chromeoptions=new ChromeOptions();
+		  ///chromeoptions.setHeadless(true);
+		        driver = new ChromeDriver()//chromeoptions);
+		        driver.manage().window().maximize();
+		        DesiredCapabilities caps=new DesiredCapabilities();
+		        caps.setCapability("resolution", "1680*1050");
+		        
+		        String webUrl="http://182.176.169.225:9045/";
+				 
+		       // String webUrl = "https://www.myhomept.co/#/login";
+		        
+				driver.get(webUrl);
+//				
+//			     Thread.sleep(4000);
+//					  driver.findElement(By.id("exampleInputEmail2")).sendKeys("demo@bluejayhealth.com");
+//				        driver.findElement(By.id("exampleInputPassword2")).sendKeys("1234567@"); // for myhomept 'zZHXjb' // for production 123456
+//				        Thread.sleep(3000);
+//				        driver.findElement(By.xpath("//button[@ng-click='openChooseRegionPopUp(user)']")).click();
+//				        Thread.sleep(5000);
+	    }
+		@AfterMethod
+		public void shut() throws InterruptedException {
+			
+			Thread.sleep(5000);
+			driver.quit();
+		
+	}
+}

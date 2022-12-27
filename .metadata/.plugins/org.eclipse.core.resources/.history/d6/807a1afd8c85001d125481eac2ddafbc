@@ -1,0 +1,12 @@
+package creatingAndAccessingWallet;
+
+import org.testng.annotations.Test;
+
+public class createAndAccessWallet extends LaunchBrowser{
+
+	@Test
+	public void createWallet() throws InterruptedException {
+		Thread.sleep(5000);
+	}
+	
+}
